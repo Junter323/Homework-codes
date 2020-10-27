@@ -1,40 +1,44 @@
-**C# **華氏與攝氏 轉換
-進度
-```
-public partial class Form1 : Form
-{
-    String keyWorld = "abcdefghijklmnopqrstuvwxyz";
-    public Form1()
+# C# 華氏與攝氏 轉換
+
+![](https://i.imgur.com/mBj544j.png)
+---
+
+``` c
+    public partial class Form1 : Form
     {
-        InitializeComponent();
-    }
-    private void button1_Click(object sender, EventArgs e)
-    {
-        if (string.IsNullOrEmpty(textBox1.Text))
+        String keyWorld = "abcdefghijklmnopqrstuvwxyz";
+        public Form1()
         {
-            MessageBox.Show("錯誤！請輸入數值", "錯誤！", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            return;
+            InitializeComponent();
         }
-        else
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < keyWorld.Length; i++)
+            if (string.IsNullOrEmpty(textBox1.Text))
             {
-                if (textBox1.Text.Contains(keyWorld.Substring(i, 1)) || textBox1.Text.Contains(keyWorld.ToUpper().Substring(i, 1)))
-                {
-                    MessageBox.Show("請輸入正確數值", "錯誤！",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Clear();
-                    return;
-                }
+                MessageBox.Show("錯誤！請輸入數值", "錯誤！", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
-            double ct, ft;
-            ct = Convert.ToDouble(textBox1.Text);
-            ft = (9.0 * ct) / 5.0 + 32;
-            textBox2.Text = ft.ToString();
-            label5.Text = "==>";
-            button2.Enabled = false;
-            textBox2.Enabled = false;
+            else
+            {
+                for (int i = 0; i < keyWorld.Length; i++)
+                {
+                    if (textBox1.Text.Contains(keyWorld.Substring(i, 1)) || textBox1.Text.Contains(keyWorld.ToUpper().Substring(i, 1)))
+                    {
+                        MessageBox.Show("請輸入正確數值", "錯誤！",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox1.Clear();
+                        return;
+                    }
+                }
+                double ct, ft;
+                ct = Convert.ToDouble(textBox1.Text);
+                ft = (9.0 * ct) / 5.0 + 32;
+                textBox2.Text = ft.ToString();
+                label5.Text = "==>";
+                button2.Enabled = false;
+                textBox2.Enabled = false;
+            }
         }
-    }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -103,4 +107,7 @@ public partial class Form1 : Form
     }
 ```
     
-程式碼將有錯誤！請自行修正。 Copyright © 2020 Junter.Inc All Rights Reserved
+:::warning  
+程式碼將有錯誤！請自行修正。  
+:::
+ Copyright © 2020 Junter.Inc All Rights Reserved
